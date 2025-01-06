@@ -1,0 +1,137 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(4, 52, 88);
+    min-height: 100vh;
+    margin: 0;
+}
+
+.images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.Chatbot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(78, 88, 81);
+    padding: 20px;
+    border-radius: 10px;
+    width: 1000px;
+    margin-top: 20px;
+    position: relative;
+    min-height: 500px; 
+}
+
+.popup-overlay {
+    display: none;
+    position: fixed;
+    z-index: 998;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 40%;
+    z-index: 999;
+    background-color: rgb(80, 95, 78);
+    border-radius: 10px;
+    width: 400px;
+    height: 200px;
+    text-align: center;
+}
+
+.logo {
+    width: 100px;
+    border-radius: 50px;
+    padding: 30px;
+}
+
+.history {
+    width: 800px;
+    background-color: rgb(225, 248, 220);
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 8px 16px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.entry {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#exit {
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    top: 30px;
+    left: 250px;
+    border-radius: 50px;
+    background-color: bisque;
+    z-index: 100;
+}
+
+.correction_question {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.close_correction {
+    position: fixed;
+    right: 900px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#correction {
+    width: 200px;
+    height: 60px;
+    border-radius: 40%;
+    background-color: rgb(245, 245, 240);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    font-weight: bold;
+}
+
+.box {
+    width: 850px;
+    height: 50px;
+    margin: 20px 0;
+    background-color: beige;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.enter, .clear {
+    width: 100px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: cornsilk;
+    margin-left: 600px;
+}
+
+.thankyou {
+    align-self: center;
+    margin-top: 20px; 
+    border-radius: 10%;
+    width: auto; 
+    max-width: 80%;
+}

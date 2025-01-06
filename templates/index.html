@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rae Chatbot</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+    <link rel="shortcut icon" type="x-icon" href="{{url_for('static', filename='images/rae_Logo.ico')}}">
+</head>
+<body>
+    <button id="exit" onclick="scrollToBottom()">Quit</button>
+    <div class="popup-overlay"></div>
+    <div class="popup">
+        <button onclick="pop_back()" class="close_correction">X</button>
+        <form action="/" method="POST">
+            <div>
+                <label for="text" class="correction_question">I didn't understand. Please teach me the correct response:</label>
+            </div>
+            <br>
+            <input type="text" name="correct_response" id="correction" required>
+            <input type="hidden" name="user_input" value="{{ request.form.get('user_input', '') }}">
+            <br>
+            <button class="correction_button" type="submit">Submit</button>
+        </form>
+    </div>    
+    <div class="Chatbot">
+        <img class="logo" src="{{url_for('static', filename='images/rae_Logo.jpg')}}">
+        <br>
+        <div class="history">
+            {% if response %}
+                {% for entry in history %}
+                    <p><b>You:</b>{{entry.user}}</p>
+                    <p><b>Rae:</b>{{entry.rae}}</p>
+                {% endfor %}
+            {% else %}
+                <p>What can I help you with today?</p>
+            {% endif %}
+        </div>
+        <div class="entry">
+            <form action="/" method="POST">
+                <div>
+                    <input class="box" type="text" name="user_input" placeholder="Enter your thoughts" required>
+                </div>
+                <button type="submit" class="enter">Enter</button>
+            </form>
+            <form action="/clear" method="get">
+                <button type="submit" class="clear">Clear</button>
+            </form>
+        </div>
+        <img class="thankyou" src="{{url_for('static', filename='images/ThankYou.jpg')}}">
+        <br>
+    </div>
+    <script src="{{url_for('static', filename='js/main.js')}}"></script>
+    {% if show_popup %}
+    <script>
+        pop_up();
+    </script>
+    {% endif %}
+</body>
+</html>
